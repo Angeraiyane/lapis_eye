@@ -1,0 +1,14 @@
+#Virtual environnement
+.venv/
+
+#Python cache files
+__pycache__/
+*.pyc
+
+#Secrets (API keys, passwords)
+.env
+
+#Editor and OS files
+.vscode/
+Thumbs.db
+
