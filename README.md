@@ -7,14 +7,17 @@ Everything runs locally: your data never leaves your machine.
 
 ## Status
 
-Phase 0: project setup
-Phase 1 : local llm model setup
+- [x] Phase 0: project setup
+- [x] Phase 1: local LLM with Ollama
+- [ ] Phase 2: tool calling (in progress)
+
+See [ROADMAP.md](ROADMAP.md) for details.
 
 ## Tech stack
 
 - Python 3.12
 - Git / GitHub
-- Ollama, model : qwen3.5:2b-q4_K_M
+- Ollama with `qwen3.5:2b-q4_K_M`
 
 ## Getting started
 
