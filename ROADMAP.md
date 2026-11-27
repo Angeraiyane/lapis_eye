@@ -19,9 +19,24 @@ A local AI agent that uses tools on the computer to complete tasks, built step b
 
 ## Environment
 
+- Dependencies: `requirements.txt` (`pip install -r requirements.txt`)
 - Python 3.12.16 (Astral/uv-managed), virtual env in `.venv`
 - Created with: `py -V:Astral\CPython3.12.16 -m venv .venv`
 - Git branch `main`, remote `origin` on GitHub
+
+## Model
+
+- Engine: Ollama (local server on `http://localhost:11434`)
+- Main model: `qwen3.5:2b-q4_K_M` (Apache 2.0, tools + thinking capabilities)
+- Settings: `think: false`, `temperature: 0` (deterministic output)
+- Benchmark (GTX 1650 Ti, Steam/Brave open):
+
+| Variant | Size in memory | Processor | Generation speed |
+|---|---|---|---|
+| `qwen3.5:2b` (Q8_0, default tag) | 3.0 GB | 37%/63% CPU/GPU | ~20 tokens/s |
+| `qwen3.5:2b-q4_K_M` | 1.6 GB | 100% GPU | ~60 tokens/s |
+
+- Lessons: the default tag is not always the right one; CPU offload can divide speed by 3; first run includes a one-time warm-up.
 
 ## Phases
 
@@ -40,8 +55,8 @@ A local AI agent that uses tools on the computer to complete tasks, built step b
 ## Progress
 
 - [x] Phase 0 — Foundations
-- [ ] Phase 1 — Local LLM (in progress)
-- [ ] Phase 2 — Tool calling by hand
+- [x] Phase 1 — Local LLM
+- [ ] Phase 2 — Tool calling by hand (in progress)
 - [ ] Phase 3 — Agent loop from scratch
 - [ ] Phase 4 — Powerful tools + security
 - [ ] Phase 5 — Memory
