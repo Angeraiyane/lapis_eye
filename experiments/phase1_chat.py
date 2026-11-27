@@ -13,6 +13,7 @@ def chat(messages: list[dict]) -> dict:
         "messages" : messages,
         "stream" : False,
         "think" : False,
+        "options" : {"temperature" : 0},
     }
     response = requests.post(OLLAMA_URL, json=payload, timeout=120)
     response.raise_for_status()
